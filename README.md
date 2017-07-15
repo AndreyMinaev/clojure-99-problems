@@ -6,7 +6,7 @@ See original problems [here](http://www.ic.unicamp.br/~meidanis/courses/mc336/20
 Progress:
 - Lists (1/29):
   - [x] P01
-  - [ ] P02
+  - [x] P02
   - [ ] P03
   - [ ] P04
   - [ ] P05

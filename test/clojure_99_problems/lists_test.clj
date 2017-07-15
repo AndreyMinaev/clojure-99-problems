@@ -7,3 +7,11 @@
     (is (= (last-item '(:a :b :c :d)) :d)))
   (testing "should return nil if list is empty"
     (is (= (last-item '()) nil))))
+
+(deftest last-two-items-test
+  (testing "should return empty list if initial list is empty"
+    (is (= (last-two-items '()) '())))
+  (testing "should return the equal list if initial list have one item"
+    (is (= (last-two-items '(:a)) '(:a))))
+  (testing "should return list of last two items of initial list"
+    (is (= (last-two-items '(:a :b :c :d :e)) '(:d :e)))))
