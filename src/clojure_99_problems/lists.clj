@@ -26,3 +26,8 @@
       (if (= acc k)
         (first xs)
         (recur (inc acc) (rest xs))))))
+
+(defn length
+  "find the number of elements of a list"
+  [l]
+  (reduce (fn [acc _] (inc acc)) 0 l))

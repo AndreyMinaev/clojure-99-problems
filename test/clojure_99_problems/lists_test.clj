@@ -24,3 +24,8 @@
     (is (= (kth '(:a :b :c) -1) nil)))
   (testing "should return k'th element with one based indexing"
     (is (= (kth '(:a :b :c) 2) :b))))
+
+(deftest length-test
+  (testing "should return the number of elements of a list"
+    (is (= (length '()) 0))
+    (is (= (length '(:a :b)) 2))))
