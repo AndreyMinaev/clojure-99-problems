@@ -31,3 +31,8 @@
   "find the number of elements of a list"
   [l]
   (reduce (fn [acc _] (inc acc)) 0 l))
+
+(defn my-reverse
+  "reverse a list"
+  [l]
+  (reduce #(conj %1 %2) '() l))
