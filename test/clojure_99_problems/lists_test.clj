@@ -34,3 +34,9 @@
   (testing "should return reversed list"
     (is (= (my-reverse '()) '()))
     (is (= (my-reverse '(:a :b :c)) '(:c :b :a)))))
+
+(deftest palindrome?-test
+  (testing "should return true if list is a palindrome"
+    (is (= (palindrome? '(:a :b :c :b :a)) true)))
+  (testing "should return false if list is not a palindrome"
+    (is (= (palindrome? '(:a :b :c :d :e)) false))))

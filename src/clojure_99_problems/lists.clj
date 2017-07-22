@@ -36,3 +36,8 @@
   "reverse a list"
   [l]
   (reduce #(conj %1 %2) '() l))
+
+(defn palindrome?
+  "find out whether a list is a palindrome"
+  [l]
+  (= l (reverse l)))
