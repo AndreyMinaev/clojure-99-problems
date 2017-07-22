@@ -4,10 +4,10 @@
 See original problems [here](http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html).
 
 Progress:
-- Lists (1/29):
+- Lists (3/30):
   - [x] P01
   - [x] P02
-  - [ ] P03
+  - [x] P03
   - [ ] P04
   - [ ] P05
   - [ ] P06
@@ -31,7 +31,8 @@ Progress:
   - [ ] P24
   - [ ] P25
   - [ ] P26
-  - [ ] P27
+  - [ ] P27A
+  - [ ] P27B
   - [ ] P28A
   - [ ] P28B
 

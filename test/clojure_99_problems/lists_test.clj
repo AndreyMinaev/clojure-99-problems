@@ -15,3 +15,12 @@
     (is (= (last-two-items '(:a)) '(:a))))
   (testing "should return list of last two items of initial list"
     (is (= (last-two-items '(:a :b :c :d :e)) '(:d :e)))))
+
+(deftest kth-test
+  (testing "should return nil if k is out of range"
+    (is (= (kth '(:a :b :c) 5) nil)))
+  (testing "should return nil if k is zero or negative"
+    (is (= (kth '(:a :b :c) 0) nil))
+    (is (= (kth '(:a :b :c) -1) nil)))
+  (testing "should return k'th element with one based indexing"
+    (is (= (kth '(:a :b :c) 2) :b))))

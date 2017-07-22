@@ -13,3 +13,16 @@
                  (into [] (take 2 l))
                  (drop 2 l)))
     '()))
+
+(defn kth
+  "find the k'th element of a list"
+  [l k]
+  (if (or
+       (>  k (count l))
+       ((comp not pos?) k))
+    nil
+    (loop [acc 1
+           xs l]
+      (if (= acc k)
+        (first xs)
+        (recur (inc acc) (rest xs))))))
