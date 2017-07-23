@@ -41,3 +41,14 @@
   "find out whether a list is a palindrome"
   [l]
   (= l (reverse l)))
+
+(defn my-flatten
+  "flatten a nested list structure"
+  [l]
+  (loop [acc []
+         xs l]
+    (if (seq xs)
+      (if (seq? (first xs))
+        (recur acc (concat (first xs) (rest xs)))
+        (recur (conj acc (first xs)) (rest xs)))
+      (seq acc))))

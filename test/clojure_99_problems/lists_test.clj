@@ -40,3 +40,7 @@
     (is (= (palindrome? '(:a :b :c :b :a)) true)))
   (testing "should return false if list is not a palindrome"
     (is (= (palindrome? '(:a :b :c :d :e)) false))))
+
+(deftest my-flatten-test
+  (testing "should return flat list"
+    (is (= (my-flatten '(:a (:b () (:c :d) :e))) '(:a :b :c :d :e)))))
