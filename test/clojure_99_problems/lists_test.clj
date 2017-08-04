@@ -44,3 +44,7 @@
 (deftest my-flatten-test
   (testing "should return flat list"
     (is (= (my-flatten '(:a (:b () (:c :d) :e))) '(:a :b :c :d :e)))))
+
+(deftest compress-test
+  (testing "schould return list without consecutive duplicates"
+    (is (= (compress '(:a :a :b :a :a :c :c)) '(:a :b :a :c)))))

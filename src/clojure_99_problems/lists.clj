@@ -52,3 +52,10 @@
         (recur acc (concat (first xs) (rest xs)))
         (recur (conj acc (first xs)) (rest xs)))
       (seq acc))))
+
+(defn compress
+  "eliminate consecutive duplicates of list elements"
+  [l]
+  (reverse (reduce #(if (= (first %1) %2) %1 (conj %1 %2))
+                   '()
+                   l)))
