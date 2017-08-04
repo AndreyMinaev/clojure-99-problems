@@ -75,3 +75,13 @@
   where N is the number of duplicates of element E."
   [l]
   (map #(list (count %) (first %)) (pack l)))
+
+(defn encode-modified
+  "pack repeated elements in sublists. encode sublists in format (N E)
+  where N is the number of duplicates of element E. if N is 0 then E should
+  be without list as a wrapper and N not shown"
+  [l]
+  (map #(if (> (count %) 1)
+          (list (count %) (first %))
+          (first %))
+       (pack l)))
