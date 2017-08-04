@@ -48,3 +48,8 @@
 (deftest compress-test
   (testing "schould return list without consecutive duplicates"
     (is (= (compress '(:a :a :b :a :a :c :c)) '(:a :b :a :c)))))
+
+(deftest pack-test
+  (testing "should return list with repeated elements placed in sublists"
+    (is (= (pack '(:a :a :a :b :c :c :a :a :d :e :e :e :e))
+           '((:a :a :a) (:b) (:c :c) (:a :a) (:d) (:e :e :e :e))))))

@@ -59,3 +59,13 @@
   (reverse (reduce #(if (= (first %1) %2) %1 (conj %1 %2))
                    '()
                    l)))
+
+(defn pack
+  "pack repeated elements in separate sublists"
+  [l]
+  (reverse (reduce (fn [acc item]
+                     (if (= (-> acc (first) (first)) item)
+                       (conj (rest acc) (conj (first acc) item))
+                       (conj acc (list item))))
+                   '()
+                   l)))
