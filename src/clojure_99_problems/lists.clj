@@ -69,3 +69,9 @@
                        (conj acc (list item))))
                    '()
                    l)))
+
+(defn encode
+  "pack repeated elements in sublists. encode sublists in format (N E)
+  where N is the number of duplicates of element E."
+  [l]
+  (map #(list (count %) (first %)) (pack l)))

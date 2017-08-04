@@ -53,3 +53,8 @@
   (testing "should return list with repeated elements placed in sublists"
     (is (= (pack '(:a :a :a :b :c :c :a :a :d :e :e :e :e))
            '((:a :a :a) (:b) (:c :c) (:a :a) (:d) (:e :e :e :e))))))
+
+(deftest encode-test
+  (testing "should return list with repeated elements encoded in format (N E)"
+    (is (= (encode '(:a :a :a :b :c :c :a :a :d :e :e :e :e)) 
+           '((3 :a) (1 :b) (2 :c) (2 :a) (1 :d) (4 :e))))))
