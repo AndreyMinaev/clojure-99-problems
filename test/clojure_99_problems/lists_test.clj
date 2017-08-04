@@ -2,6 +2,9 @@
   (:require [clojure.test :refer :all]
             [clojure-99-problems.lists :refer :all]))
 
+(def list-w-duplicates
+  '(:a :a :a :b :c :c :a :a :d :e :e :e :e))
+
 (deftest last-item-test
   (testing "should return last item of the list"
     (is (= (last-item '(:a :b :c :d)) :d)))
@@ -51,17 +54,21 @@
 
 (deftest pack-test
   (testing "should return list with repeated elements placed in sublists"
-    (is (= (pack '(:a :a :a :b :c :c :a :a :d :e :e :e :e))
-           '((:a :a :a) (:b) (:c :c) (:a :a) (:d) (:e :e :e :e))))))
+    (is (= (pack list-w-duplicates)))))
 
 (deftest encode-test
   (testing "should return list with repeated elements encoded in format (N E)"
-    (is (= (encode '(:a :a :a :b :c :c :a :a :d :e :e :e :e)) 
-           '((3 :a) (1 :b) (2 :c) (2 :a) (1 :d) (4 :e))))))
+    (is (= (encode list-w-duplicates)))))
 
 (deftest encode-modified-test
   (testing "should return list with repeated elements encoded
            in format (N E). elements without duplicated should be
            as they are."
-    (is (= (encode-modified '(:a :a :a :b :c :c :a :a :d :e :e :e :e)) 
+    (is (= (encode-modified list-w-duplicates)
            '((3 :a) :b (2 :c) (2 :a) :d (4 :e))))))
+
+(deftest decode-test
+  (testing "should return initial list that from encoded
+           with encode-modified"
+    (is (= (-> list-w-duplicates encode-modified decode)
+           list-w-duplicates))))

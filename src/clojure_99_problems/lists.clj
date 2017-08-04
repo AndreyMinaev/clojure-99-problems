@@ -85,3 +85,12 @@
           (list (count %) (first %))
           (first %))
        (pack l)))
+
+(defn decode
+  "decode list encoded with encode-modified"
+  [l]
+  (reduce #(if (seq? %2)
+             (apply conj %1 (repeat (first %2) (second %2)))
+             (conj %1 %2))
+          '()
+          (reverse l)))
