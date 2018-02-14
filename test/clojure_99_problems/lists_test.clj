@@ -84,3 +84,8 @@
   (testing "should return list of duplicated elements"
     (is (= (dupli '(:a :b :c :c :d))
            '(:a :a :b :b :c :c :c :c :d :d)))))
+
+(deftest repli-test
+  (testing "should return list of elements repeated n times"
+    (is (= (repli '(:a :b :c) 3)
+           '(:a :a :a :b :b :b :c :c :c)))))

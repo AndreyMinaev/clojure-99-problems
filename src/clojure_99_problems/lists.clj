@@ -117,3 +117,9 @@
   (reverse (reduce #(-> %1 (conj %2) (conj %2))
                    '()
                    l)))
+
+(defn repli
+  [l n]
+  (reverse (reduce #(reduce conj %1 (repeat n %2))
+                   '()
+                   l)))
