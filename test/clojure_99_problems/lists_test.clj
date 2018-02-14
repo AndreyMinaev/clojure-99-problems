@@ -78,4 +78,9 @@
            in format (N E). elements without duplicated should be
            as they are."
     (is (= (encode-direct list-w-duplicates)
-          '((3 :a) :b (2 :c) (2 :a) :d (4 :e))))))
+           '((3 :a) :b (2 :c) (2 :a) :d (4 :e))))))
+
+(deftest dupli-test
+  (testing "should return list of duplicated elements"
+    (is (= (dupli '(:a :b :c :c :d))
+           '(:a :a :b :b :c :c :c :c :d :d)))))

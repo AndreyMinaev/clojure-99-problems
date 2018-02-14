@@ -111,3 +111,9 @@
 
              '()
              l)))
+
+(defn dupli
+  [l]
+  (reverse (reduce #(-> %1 (conj %2) (conj %2))
+                   '()
+                   l)))
