@@ -74,6 +74,8 @@
            list-w-duplicates))))
 
 (deftest encode-direct-test
-  (testing "should"
+  (testing "should return list with repeated elements encoded
+           in format (N E). elements without duplicated should be
+           as they are."
     (is (= (encode-direct list-w-duplicates)
           '((3 :a) :b (2 :c) (2 :a) :d (4 :e))))))
