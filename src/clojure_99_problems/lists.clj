@@ -1,6 +1,6 @@
 (ns clojure-99-problems.lists)
 
-(defn last-item 
+(defn last-item
   "return last item of list"
   [l]
   (reduce (fn [_ item] item) nil l))
@@ -94,3 +94,20 @@
              (conj %1 %2))
           '()
           (reverse l)))
+
+(defn encode-direct
+  [l]
+  (reverse (reduce
+             (fn [acc item]
+               (let [head (first acc)]
+                 (if (list? head)
+                   (if (= (second head) item)
+                     (conj (rest acc) (list (inc (first head)) item))
+                     (conj acc item))
+                   (if (= head item)
+                     (conj (rest acc) (list 2 item))
+                     (conj acc item)))))
+
+
+             '()
+             l)))

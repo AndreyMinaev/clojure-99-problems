@@ -72,3 +72,8 @@
            with encode-modified"
     (is (= (-> list-w-duplicates encode-modified decode)
            list-w-duplicates))))
+
+(deftest encode-direct-test
+  (testing "should"
+    (is (= (encode-direct list-w-duplicates)
+          '((3 :a) :b (2 :c) (2 :a) :d (4 :e))))))
