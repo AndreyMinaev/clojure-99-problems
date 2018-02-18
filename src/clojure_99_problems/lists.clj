@@ -123,3 +123,17 @@
   (reduce #(reduce conj %1 (repeat n %2))
           '()
           (reverse l)))
+
+(defn drop-every
+  [l n]
+  (reverse (loop [xs l
+                  i 1
+                  acc '()]
+             (if (seq xs)
+               (recur
+                (rest xs)
+                (inc i)
+                (if (zero? (rem i n))
+                  acc
+                  (conj acc (first xs))))
+               acc))))

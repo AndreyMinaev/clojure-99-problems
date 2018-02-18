@@ -89,3 +89,8 @@
   (testing "should return list of elements repeated n times"
     (is (= (repli '(:a :b :c) 3)
            '(:a :a :a :b :b :b :c :c :c)))))
+
+(deftest drop-every-test
+  (testing "should return list with every N'th element dropped"
+    (is (= (drop-every '(:a :b :c :d :e :f :g :h :i :k) 3)
+           '(:a :b :d :e :g :h :k)))))
