@@ -114,12 +114,12 @@
 
 (defn dupli
   [l]
-  (reverse (reduce #(-> %1 (conj %2) (conj %2))
-                   '()
-                   l)))
+  (reduce #(-> %1 (conj %2) (conj %2))
+          '()
+          (reverse l)))
 
 (defn repli
   [l n]
-  (reverse (reduce #(reduce conj %1 (repeat n %2))
-                   '()
-                   l)))
+  (reduce #(reduce conj %1 (repeat n %2))
+          '()
+          (reverse l)))
