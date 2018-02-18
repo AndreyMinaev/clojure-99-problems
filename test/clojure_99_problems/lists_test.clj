@@ -94,3 +94,8 @@
   (testing "should return list with every N'th element dropped"
     (is (= (drop-every '(:a :b :c :d :e :f :g :h :i :k) 3)
            '(:a :b :d :e :g :h :k)))))
+
+(deftest split-test
+  (testing "should return two lists"
+    (is (= (split '(:a :b :c :d :e :f :g :h :i :k) 3)
+           '((:a :b :c) (:d :e :f :g :h :i :k))))))
