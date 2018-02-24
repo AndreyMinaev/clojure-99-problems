@@ -160,3 +160,9 @@
                  (recur tail (inc i) (conj acc head))
                  (recur tail (inc i) acc))
                acc))))
+
+(defn rotate
+  [l n]
+  (let [length (count l)
+        offset (rem (+ n length) length)]
+    (concat (slice l (inc offset) length) (slice l 1 offset))))

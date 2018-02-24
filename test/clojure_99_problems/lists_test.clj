@@ -104,3 +104,10 @@
   (testing "should return sublist"
     (is (= (slice '(:a :b :c :d :e :f :g :h :i :k) 3 7)
            '(:c :d :e :f :g)))))
+
+(deftest rotate-test
+  (testing "should rotate a list N places to the left"
+    (is (= (rotate '(:a :b :c :d :e :f :g :h) 3)
+           '(:d :e :f :g :h :a :b :c)))
+    (is (= (rotate '(:a :b :c :d :e :f :g :h) -2)
+           '(:g :h :a :b :c :d :e :f)))))
