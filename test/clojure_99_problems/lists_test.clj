@@ -111,3 +111,8 @@
            '(:d :e :f :g :h :a :b :c)))
     (is (= (rotate '(:a :b :c :d :e :f :g :h) -2)
            '(:g :h :a :b :c :d :e :f)))))
+
+(deftest remove-at-test
+  (testing "should remove the K'th element from a list"
+    (is (= (remove-at '(:a :b :c :d) 2)
+           '(:a :c :d)))))
