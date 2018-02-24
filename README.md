@@ -4,7 +4,7 @@
 See original problems [here](http://www.ic.unicamp.br/~meidanis/courses/mc336/2006s2/funcional/L-99_Ninety-Nine_Lisp_Problems.html).
 
 Progress:
-- Lists (17/30):
+- Lists (18/30):
   - [x] P01
   - [x] P02
   - [x] P03
@@ -22,7 +22,7 @@ Progress:
   - [x] P15
   - [x] P16
   - [x] P17
-  - [ ] P18
+  - [x] P18
   - [ ] P19
   - [ ] P20
   - [ ] P21

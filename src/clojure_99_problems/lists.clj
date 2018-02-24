@@ -149,3 +149,14 @@
         (recur (rest xs) (inc i) acc1 (conj acc2 (first xs)))
         (recur (rest xs) (inc i) (conj acc1 (first xs)) acc2))
       (list (reverse acc1) (reverse acc2)))))
+
+(defn slice
+  [l start end]
+  (reverse (loop [[head & tail] l
+                  i 1
+                  acc '()]
+             (if (some? head)
+               (if (and (>= i start) (<= i end))
+                 (recur tail (inc i) (conj acc head))
+                 (recur tail (inc i) acc))
+               acc))))

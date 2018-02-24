@@ -99,3 +99,8 @@
   (testing "should return two lists"
     (is (= (split '(:a :b :c :d :e :f :g :h :i :k) 3)
            '((:a :b :c) (:d :e :f :g :h :i :k))))))
+
+(deftest slice-test
+  (testing "should return sublist"
+    (is (= (slice '(:a :b :c :d :e :f :g :h :i :k) 3 7)
+           '(:c :d :e :f :g)))))
