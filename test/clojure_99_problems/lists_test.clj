@@ -116,3 +116,8 @@
   (testing "should remove the K'th element from a list"
     (is (= (remove-at '(:a :b :c :d) 2)
            '(:a :c :d)))))
+
+(deftest insert-at-test
+  (testing "should insert an element at a given position into a list"
+    (is (= (insert-at :alpha '(:a :b :c :d) 2)
+           '(:a :alpha :b :c :d)))))

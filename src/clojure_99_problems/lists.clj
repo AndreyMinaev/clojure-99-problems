@@ -177,3 +177,14 @@
         (concat (reverse acc) tail)
         (recur tail (inc i) (conj acc head)))
       (reverse acc))))
+
+(defn insert-at
+  [el l n]
+  (loop [[head & tail] l
+         i 1
+         acc '()]
+    (if (some? head)
+      (if (= i n)
+        (concat (reverse acc) (list el head) tail)
+        (recur tail (inc i) (conj acc head)))
+      (reverse acc))))
